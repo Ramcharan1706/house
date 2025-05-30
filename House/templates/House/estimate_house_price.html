@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimate - House Price Estimator</title>
+    <link rel="stylesheet" href="{% static 'House/house.css' %}">
+</head>
+<body>
+    <div class="section-hero">
+        <nav class="main-nav">
+            <h1 class="brand-logo">House Price Estimator</h1>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'estimate_house_price' %}">Estimate</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </nav>
+        <div class="estimate-form-wrapper">
+            <h2>Estimate Your House Price</h2>
+            <form class="estimate-form" method="get">
+                <label for="beds">Beds:</label>
+                <input type="number" name="beds" value="{{ beds }}" min="1"><br><br>
+
+                <label for="baths">Baths:</label>
+                <input type="number" name="baths" value="{{ baths }}" min="1"><br><br>
+
+                <label for="sqft">Sqft:</label>
+                <input type="number" name="sqft" value="{{ sqft }}" min="1"><br><br>
+
+                <label for="floors">Floors:</label>
+                <input type="number" name="floors" value="{{ floors }}" min="1"><br><br>
+
+                <label for="location">Location:</label>
+                <select name="location">
+                    <option value="downtown" {% if location == 'downtown' %}selected{% endif %}>Downtown</option>
+                    <option value="suburb" {% if location == 'suburb' %}selected{% endif %}>Suburb</option>
+                    <option value="rural" {% if location == 'rural' %}selected{% endif %}>Rural</option>
+                </select><br><br>
+
+                <input type="submit" value="Estimate Price">
+            </form>
+            {% if estimated_cost %}
+                <h2 class="result-text">The estimated price of the house is: Rs {{ estimated_cost }}</h2>
+            {% else %}
+                <h2 class="result-text">Please enter valid values to get an estimate.</h2>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

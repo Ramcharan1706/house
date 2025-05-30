@@ -1,0 +1,185 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f2f2f2;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.section-hero {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('/static/House/overlay-pattern.png') repeat;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* Navigation Bar */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.brand-logo {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.main-nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #ffd369;
+}
+
+/* Hero Content */
+.intro-content {
+    margin-top: 40px;
+}
+
+.intro-subtitle {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+.intro-title {
+    font-size: 48px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.intro-description {
+    font-size: 20px;
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.95;
+}
+
+/* Call to Action Button */
+.cta-estimate {
+    background: white;
+    color: #764ba2;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.cta-estimate:hover {
+    background: #ffd369;
+    color: #333;
+    transform: translateY(-2px);
+}
+
+/* Form Section */
+.form-wrapper {
+    background: white;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.estimate-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.estimate-form input,
+.estimate-form select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.estimate-form input:focus,
+.estimate-form select:focus {
+    border-color: #764ba2;
+    outline: none;
+}
+
+/* Submit Button */
+.estimate-form input[type="submit"] {
+    background: #667eea;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.estimate-form input[type="submit"]:hover {
+    background: #5a67d8;
+}
+
+/* Result Section */
+.result-text {
+    text-align: center;
+    font-size: 22px;
+    margin: 30px auto;
+    padding: 20px;
+    color: #222;
+    background-color: #fff;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .intro-title {
+        font-size: 36px;
+    }
+
+    .intro-description {
+        font-size: 18px;
+    }
+
+    .main-nav {
+        flex-direction: column;
+    }
+
+    .main-nav a {
+        margin: 10px 0;
+    }
+}

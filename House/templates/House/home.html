@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - House Price Estimator</title>
+    <link rel="stylesheet" href="{% static 'House/house.css' %}">
+</head>
+<body>
+    <div class="section-hero">
+        <nav class="main-nav">
+            <h1 class="brand-logo">House Price Estimator</h1>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'estimate_house_price' %}">Estimate</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </nav>
+        <div class="intro-content">
+            <p class="intro-subtitle">Welcome to</p>
+            <h1 class="intro-title">House Price Estimator</h1>
+            <p class="intro-description">Estimate the value of your house easily.</p>
+            <a href="{% url 'estimate_house_price' %}"><button class="cta-estimate">Get Estimate</button></a>
+        </div>
+    </div>
+</body>
+</html>
